@@ -26,7 +26,8 @@ const shuffle = (arr) => {
   return arr;
 }
 
-const sort = (arr) => {
+const quickSort = (arr) => {
+  if (arr.length <= 1) return arr;
   arr = shuffle(arr);
   return _sort(arr, 0, arr.length - 1);
 };
@@ -39,3 +40,4 @@ const _sort = (arr, lo, hi) => {
   return arr;
 };
 
+export default quickSort;
