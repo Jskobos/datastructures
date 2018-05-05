@@ -1,3 +1,5 @@
+import shuffle from '../shuffle/shuffle';
+
 const swap = (arr, x, y) => {
 	const tmp = arr[y];
 	arr[y] = arr[x];
@@ -21,10 +23,6 @@ const partition = (arr, lo, hi) => {
   swap(arr, lo, j);
   return j;
 };
-
-const shuffle = (arr) => {
-  return arr;
-}
 
 const quickSort = (arr) => {
   if (arr.length <= 1) return arr;

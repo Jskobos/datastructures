@@ -22,8 +22,8 @@ sorts.forEach((sort) => {
         });
         it("should sort anything that is comparable", () => {
             const testArr2 = 'thequickbrownfoxjumpedoverthelazydog'.split('');
-            expect(sort(testArr2)).toEqual(testArr2.slice(0).sort());
             expect(sort(['b','d','a','c'])).toEqual(['a','b','c','d']);
+            expect(sort(testArr2)).toEqual(testArr2.slice(0).sort());
         });
     });
 });
