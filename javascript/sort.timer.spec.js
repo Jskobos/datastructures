@@ -35,7 +35,7 @@ xit("Should sort random arrays effectively", () => {
     const numTrials = 5;
     for (let i = 0; i < numTrials; i++) {
         console.log(`Randomized trial run ${i}/${numTrials}`);
-        const longArray = generateRandomArray(1000);
+        const longArray = generateRandomArray(10000);
         sorts.forEach((sort) => {
             const t0 = performance.now();
             const sorted = sort.sort(longArray);
