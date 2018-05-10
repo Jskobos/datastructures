@@ -1,5 +1,6 @@
 import quickSort from './quicksort/quicksort';
 import mergeSort from './mergesort/mergesort';
+import insertionSort from './insertionsort/insertionsort';
 
 const sorts = [
     {
@@ -10,6 +11,11 @@ const sorts = [
     {
         'name': 'Quicksort',
         'sort': quickSort,
+        'history': []
+    },
+    {
+        'name': 'Insertion sort',
+        'sort': insertionSort,
         'history': []
     }
 ]
@@ -31,7 +37,7 @@ const arrayMean = (arr) => {
 
 // This is a "test" because Node still doesn't handle imports natively.
 
-xit("Should sort random arrays effectively", () => {
+it("Should sort random arrays effectively", () => {
     const numTrials = 5;
     for (let i = 0; i < numTrials; i++) {
         console.log(`Randomized trial run ${i}/${numTrials}`);

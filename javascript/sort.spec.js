@@ -1,7 +1,8 @@
 import quickSort from './quicksort/quicksort';
 import mergeSort from './mergesort/mergeSort';
+import insertionSort from './insertionsort/insertionsort';
 
-const sorts = [quickSort, mergeSort];
+const sorts = [quickSort, mergeSort, insertionSort];
 
 sorts.forEach((sort) => {
     describe("Sort: " , () => {
