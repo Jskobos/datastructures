@@ -6,6 +6,6 @@ const shuffle = (arr) => {
         arr[j] = tmp;
     }
     return arr;
-}
+};
 
 export default shuffle;

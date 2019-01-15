@@ -34,7 +34,7 @@ const _sort = (arr, lo, hi) => {
   if (hi <= lo) return;
   const p = partition(arr, lo, hi);
   _sort(arr,lo, p - 1);
-  _sort(arr,p + 1, hi);
+  _sort(arr, p + 1, hi);
   return arr;
 };
 
