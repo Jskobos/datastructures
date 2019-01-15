@@ -7,9 +7,13 @@ const mergeSort = (arr) => {
 const _merge = (arr1, arr2) => {
   const merged = [];
   while (arr1.length > 0 && arr2.length > 0) {
-    arr1[0] <= arr2[0] ? merged.push(arr1.shift()) : merged.push(arr2.shift());
+    if (arr1[0] <= arr2[0]) {
+      merged.push(arr1.shift());
+     } else {
+       merged.push(arr2.shift());
+     }
   }
-  return merged.concat(arr1,arr2);
-}
+  return merged.concat(arr1, arr2);
+};
 
 export default mergeSort;
