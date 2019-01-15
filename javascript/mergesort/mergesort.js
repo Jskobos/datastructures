@@ -1,7 +1,7 @@
 const mergeSort = (arr) => {
-  if (arr.length <= 1) return arr; 
+  if (arr.length <= 1) return arr;
   const middle = Math.floor(arr.length / 2);
-  return _merge(mergeSort(arr.slice(0,middle)), mergeSort(arr.slice(middle,)));
+  return _merge(mergeSort(arr.slice(0,middle)), mergeSort(arr.slice(middle,arr.length)));
 }
 
 const _merge = (arr1, arr2) => {
