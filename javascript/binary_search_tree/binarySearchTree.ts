@@ -1,10 +1,10 @@
 interface Node<T> {
-  value: T | null;
+  value: T;
   left: Node<T> | null;
   right: Node<T> | null;
 }
 
-const node = <T>(value: T | null): Node<T> => {
+const newNode = <T>(value: T): Node<T> => {
   return {
     value,
     left: null,
@@ -13,29 +13,33 @@ const node = <T>(value: T | null): Node<T> => {
 }
 
 export class BinarySearchTree<T> {
-  root: Node<T>;
+  root: Node<T> | null;
 
   constructor() {
-    this.root = node<T>(null);
+    this.root = null;
   }
 
   get(value: T) {
 
   }
 
-  put(value: T, root: Node<T> = this.root) {
-    if (root.value === null) {
-      root = node<T>(value);
+  put(value: T) {
+    this.root = this._put(this.root, value)
+  }
+
+  _put(node: Node<T> | null, value: T): Node<T> {
+    if (node === null) {
+      return newNode<T>(value);
     }
-    else if (value > root.value) {
-      root.right ? this.put(value, root.right) : root.right = node<T>(value);
+    else if (value > node.value) {
+      node.right = this._put(node.right, value);
     }
-    else if (value < root.value) {
-      root.left ? this.put(value, root.left) : root.left = node<T>(value);
+    else if (value < node.value) {
+      node.left = this._put(node.left, value)
     }
     else {
-      root.value = value
+      node.value = value;
     }
-    console.log(this);
+    return node;
   }
 }
