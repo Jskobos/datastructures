@@ -5,7 +5,7 @@ class BinarySearch {
     }
 
     search(target) {
-        let m, left = 0, right = this.arr.length;
+        let m, left = 0, right = this.arr.length - 1;
         while (left <= right) {
             m = Math.floor((right + left) / 2);
             if      (this.arr[m] < target)      left   = m + 1;
