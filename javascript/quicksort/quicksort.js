@@ -27,14 +27,14 @@ const partition = (arr, lo, hi) => {
 const quickSort = (arr) => {
   if (arr.length <= 1) return arr;
   arr = shuffle(arr);
-  return _sort(arr, 0, arr.length - 1);
+  return sort(arr, 0, arr.length - 1);
 };
 
-const _sort = (arr, lo, hi) => {
+const sort = (arr, lo, hi) => {
   if (hi <= lo) return;
   const p = partition(arr, lo, hi);
-  _sort(arr,lo, p - 1);
-  _sort(arr, p + 1, hi);
+  sort(arr,lo, p - 1);
+  sort(arr, p + 1, hi);
   return arr;
 };
 
