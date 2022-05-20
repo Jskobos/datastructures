@@ -1,4 +1,5 @@
 import { canSum } from './canSum';
+import { findSum } from './findSum';
 
 describe("Sum exercises", () => {
   describe("Can sum", () => {
@@ -16,6 +17,19 @@ describe("Sum exercises", () => {
       expect(canSum([], 0)).toBe(true);
       expect(canSum([1, 2, 3], 0)).toBe(true);
     })
-  })
+  });
 
+  describe("findSum", () => {
+    it("should find a set of numbers that generate the target sum", () => {
+      expect(findSum([3, 5, 10], 8)).toEqual([3, 5]);
+    });
+
+    it("should return null if the sum is impossible given the provided numbers", () => {
+      expect(findSum([2, 4, 6, 8, 10], 7)).toBeNull();
+    });
+
+    it("should handle large sets", () => {
+      expect(findSum([4, 2, 6], 333)).toBeNull();
+    })
+  })
 });
