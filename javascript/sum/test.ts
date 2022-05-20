@@ -1,5 +1,6 @@
 import { canSum } from './canSum';
 import { findSum } from './findSum';
+import { shortestSum } from './shortestSum';
 
 describe("Sum exercises", () => {
   describe("Can sum", () => {
@@ -30,6 +31,17 @@ describe("Sum exercises", () => {
 
     it("should handle large sets", () => {
       expect(findSum([4, 2, 6], 333)).toBeNull();
+    })
+  });
+
+  describe("shortestSum", () => {
+    it("should return the shortest possible combination if one exists", () => {
+      expect(shortestSum([2, 4, 6, 8], 8)).toEqual([8]);
+      expect(shortestSum([1, 3], 10)).toEqual([1, 3, 3, 3]);
+    });
+
+    it("should return null if no combination is possible", () => {
+      expect(shortestSum([2, 4, 6, 8, 10], 7)).toBeNull();
     })
   })
 });
